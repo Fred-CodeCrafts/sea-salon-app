@@ -1,0 +1,125 @@
+.center-container {
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.circular-box {
+    width: fit-content;
+    height: auto;
+    position: relative;
+    display: inline-block;
+    padding: 20px 40px;
+    background-color: #24243e;
+    text-align: center;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    border-radius: 40px;
+    border: 2px solid #3f86a6;
+}
+
+.form-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.form-center label,
+.form-center select,
+.form-center input {
+    margin-bottom: 5px;
+    margin-right: 5px;
+}
+
+.form-center label {
+    margin-bottom: 5px;
+    margin-right: 5px;
+}
+
+.input-box {
+    width: 100%;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.submit-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    background-color: #3f86a6;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #24243e;
+}
+
+.spaced-div {
+    margin-top: 40px;
+}
+
+table {
+    background-image: url('/public/table_bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    opacity: 0.8;
+    width: fit-content;
+    margin: 20px auto 50px auto;
+    border-collapse: collapse;
+    overflow: hidden;
+    max-width: 100%;
+    min-width: 600px;
+    display: block;
+    overflow-x: auto;
+}
+
+thead {
+    background-color: #000;
+    color: #fff;
+}
+
+tbody {
+    color: #fff;
+}
+
+thead th,
+tbody td {
+    padding: 10px;
+    border: 1px solid #fff;
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    thead th,
+    tbody td {
+        font-size: 18px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    thead th,
+    tbody td {
+        font-size: 16px;
+        padding: 5px;
+    }
+}

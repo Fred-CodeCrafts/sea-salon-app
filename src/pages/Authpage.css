@@ -1,0 +1,95 @@
+.container {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    
+}
+
+.overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); 
+}
+
+.box {
+    border: 0.8vw solid #f2f7fa;
+    border-radius:15vh;
+    padding: 3.25vh;
+    width: 30vw;
+    background-color: #fbfbf7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.box h1 {
+    color: #9cbcd4; 
+    margin-bottom: 20px;
+}
+
+.box form {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    margin-bottom: 10px;
+}
+
+.row input[type="text"],
+.row input[type="email"],
+.row input[type="password"]
+{
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #f2f7fa;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.row button{
+    background-color: #4185bd;
+}
+
+.row button:hover{
+    background-color: #6cc4ec;
+}
+.centered {
+    text-align: center;
+}
+
+@media (max-width: 1024px) {
+    .box {
+        width: 80%;
+        height: auto;
+        padding: 2.5vh;
+        border-radius: 10vh;
+    }
+
+    .box h1 {
+        font-size: 1.5rem;
+    }
+
+    .row input[type="text"],
+    .row input[type="email"],
+    .row input[type="password"] {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .row button {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
