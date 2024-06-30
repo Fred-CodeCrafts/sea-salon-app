@@ -84,7 +84,7 @@ table {
     border-collapse: collapse;
     overflow: hidden;
     max-width: 100%;
-    min-width: 600px;
+    min-width: 0.8vw;
     display: block;
     overflow-x: auto;
 }
