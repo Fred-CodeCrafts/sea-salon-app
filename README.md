@@ -1,70 +1,93 @@
-# Getting Started with Create React App
+# SEA Salon
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A submission for the CMPFest Software Engineering Academy showcasing various levels of web development skills.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Project Description](#project-description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Features](#features)
+- [Contact](#contact)
 
-### `npm start`
+## Project Description
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+SEA Salon is a web application designed to demonstrate my skills in software engineering. It includes multiple levels, each adding more complexity and functionality to the application.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Ensure you have Node.js and npm installed. You can download them from [nodejs.org](https://nodejs.org/).
 
-### `npm run build`
+### Steps
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/Fred-CodeCrafts/sea-salon-app.git
+    ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Navigate to the project directory:
+    ```bash
+    cd sea-salon-app
+    ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Install the dependencies:
+    ```bash
+    npm install
+    ```
 
-### `npm run eject`
+4. Start the application:
+    ```bash
+    npm start
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Usage
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+After starting the application, you can access it in your browser at `http://localhost:3000`. The following dependencies are installed:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- `@fortawesome/fontawesome-svg-core@6.5.2`
+- `@fortawesome/free-regular-svg-icons@6.5.2`
+- `@fortawesome/free-solid-svg-icons@6.5.2`
+- `@fortawesome/react-fontawesome@0.2.2`
+- `@testing-library/jest-dom@5.17.0`
+- `@testing-library/react@13.4.0`
+- `@testing-library/user-event@13.5.0`
+- `axios@1.7.2`
+- `gh-pages@6.1.1`
+- `idb@8.0.0`
+- `react-dom@18.3.1`
+- `react-icons@5.2.1`
+- `react-router-dom@6.23.1`
+- `react-scripts@5.0.1`
+- `react@18.3.1`
+- `web-vitals@2.1.4`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Features
 
-## Learn More
+### Level Overview
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. **Level 1: SEA Salon Home Page (10 pts)**
+   - Basic structure and styling of the home page.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. **Level 2: Interactivity! (20 pts)**
+   - Adding interactive elements to the home page.
 
-### Code Splitting
+3. **Level 3: Reservation System (5 + 15 pts)**
+   - Basic reservation system for users to book appointments.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+4. **Level 4: Authentication System (20 + 5 pts)**
+   - User authentication system for secure access.
 
-### Analyzing the Bundle Size
+5. **Level 5: Advanced Reservation System (15 + 10 pts)**
+   - Advanced features in the reservation system for better user experience.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Contact
 
-### Making a Progressive Web App
+Frederick Garner  
+Email: frederickgarner06@gmail.com  
+GitHub: [Fred-CodeCrafts](https://github.com/Fred-CodeCrafts/sea-salon-app)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Note**: This project is not for commercial use and is intended solely to demonstrate my software engineering skills.
