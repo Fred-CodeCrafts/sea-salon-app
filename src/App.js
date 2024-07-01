@@ -31,11 +31,19 @@ const App = () => {
             },
         ];
 
-        const db = window.indexedDB.open('branches_db', 1);
+        const request = window.indexedDB.open('branches_db', 1);
 
-        db.onsuccess = (event) => {
-            const database = event.target.result;
-            const transaction = database.transaction('branches', 'readonly');
+        request.onupgradeneeded = (event) => {
+            const db = event.target.result;
+            if (!db.objectStoreNames.contains('branches')) {
+                const objectStore = db.createObjectStore('branches', { keyPath: 'name' });
+                objectStore.createIndex('name', 'name', { unique: true });
+            }
+        };
+
+        request.onsuccess = (event) => {
+            const db = event.target.result;
+            const transaction = db.transaction('branches', 'readonly');
             const objectStore = transaction.objectStore('branches');
             const getAllRequest = objectStore.getAll();
 
@@ -49,13 +57,8 @@ const App = () => {
                 );
 
                 if (missingBranches.length > 0) {
-                    const addTransaction = database.transaction(
-                        'branches',
-                        'readwrite'
-                    );
-                    const branchesStore = addTransaction.objectStore(
-                        'branches'
-                    );
+                    const addTransaction = db.transaction('branches', 'readwrite');
+                    const branchesStore = addTransaction.objectStore('branches');
 
                     missingBranches.forEach((branch) => {
                         branchesStore.add(branch);
@@ -67,10 +70,7 @@ const App = () => {
                     };
 
                     addTransaction.onerror = (event) => {
-                        console.error(
-                            'Error adding default branches:',
-                            event.target.error
-                        );
+                        console.error('Error adding default branches:', event.target.error);
                     };
                 } else {
                     setBranches(existingBranches);
@@ -82,7 +82,7 @@ const App = () => {
             };
         };
 
-        db.onerror = (event) => {
+        request.onerror = (event) => {
             console.error('IndexedDB error:', event.target.errorCode);
         };
     }, []);
