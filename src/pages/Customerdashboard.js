@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Customerdashboard.css';
 
-
 const CustomerDashboard = ({ branches }) => {
     useEffect(() => {
         document.body.style.background = 'linear-gradient(90deg, #3f86a6 0%, #302b63 50%, #24243e 100%)';
@@ -9,7 +8,7 @@ const CustomerDashboard = ({ branches }) => {
         return () => {
           document.body.style.background = '';
         };
-      }, []);
+    }, []);
     
     const [reservation, setReservation] = useState({
         name: '',
@@ -25,11 +24,18 @@ const CustomerDashboard = ({ branches }) => {
     }, []);
 
     const loadReservations = () => {
-        const db = window.indexedDB.open('reservations_db', 1);
+        const request = window.indexedDB.open('reservations_db', 1);
 
-        db.onsuccess = (event) => {
-            const database = event.target.result;
-            const transaction = database.transaction('reservations', 'readonly');
+        request.onupgradeneeded = (event) => {
+            const db = event.target.result;
+            if (!db.objectStoreNames.contains('reservations')) {
+                const objectStore = db.createObjectStore('reservations', { keyPath: 'id', autoIncrement: true });
+            }
+        };
+
+        request.onsuccess = (event) => {
+            const db = event.target.result;
+            const transaction = db.transaction('reservations', 'readonly');
             const objectStore = transaction.objectStore('reservations');
             const getAllRequest = objectStore.getAll();
 
@@ -42,17 +48,17 @@ const CustomerDashboard = ({ branches }) => {
             };
         };
 
-        db.onerror = (event) => {
+        request.onerror = (event) => {
             console.error('IndexedDB error:', event.target.errorCode);
         };
     };
 
     const addReservation = () => {
-        const db = window.indexedDB.open('reservations_db', 1);
+        const request = window.indexedDB.open('reservations_db', 1);
 
-        db.onsuccess = (event) => {
-            const database = event.target.result;
-            const transaction = database.transaction('reservations', 'readwrite');
+        request.onsuccess = (event) => {
+            const db = event.target.result;
+            const transaction = db.transaction('reservations', 'readwrite');
             const objectStore = transaction.objectStore('reservations');
             const addRequest = objectStore.add(reservation);
 
@@ -74,7 +80,7 @@ const CustomerDashboard = ({ branches }) => {
             };
         };
 
-        db.onerror = (event) => {
+        request.onerror = (event) => {
             console.error('IndexedDB error:', event.target.errorCode);
         };
     };
@@ -95,8 +101,8 @@ const CustomerDashboard = ({ branches }) => {
     };
 
     return (
-        <div class="center-container">
-            <h1  class="circular-box">Customer Dashboard</h1>
+        <div className="center-container">
+            <h1 className="circular-box">Customer Dashboard</h1>
 
             <h2>Make a Reservation</h2>
             <form onSubmit={handleSubmitReservation} className="form-center">
@@ -125,7 +131,7 @@ const CustomerDashboard = ({ branches }) => {
                                 phoneNumber: e.target.value,
                             })
                         }
-                        pattern="[0-9]{10,1}"
+                        pattern="[0-9]{7,12}"
                         title="Phone number should be 7-12 digits."
                         className="input-box"
                         required
