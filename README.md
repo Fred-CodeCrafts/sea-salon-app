@@ -67,19 +67,19 @@ After starting the application, you can access it in your browser at `http://loc
 
 ### Level Overview
 
-1. **Level 1: SEA Salon Home Page (10 pts)**
+1. **Level 1: SEA Salon Home Page**
    - Basic structure and styling of the home page.
 
-2. **Level 2: Interactivity! (20 pts)**
+2. **Level 2: Interactivity!**
    - Adding interactive elements to the home page.
 
-3. **Level 3: Reservation System (5 + 15 pts)**
+3. **Level 3: Reservation System**
    - Basic reservation system for users to book appointments.
 
-4. **Level 4: Authentication System (20 + 5 pts)**
+4. **Level 4: Authentication System**
    - User authentication system for secure access.
 
-5. **Level 5: Advanced Reservation System (15 + 10 pts)**
+5. **Level 5: Advanced Reservation System**
    - Advanced features in the reservation system for better user experience.
 
 ## Contact
